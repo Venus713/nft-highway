@@ -1,6 +1,6 @@
-# Highwind
+# NFT-Highway
 
-`Highwind` is a tool that allows you to deploy NFT smart contracts through a Graphic User Interface (GUI). With Highwind you can easily create and mint items that can be sold on [OpenSea](https://opensea.io/).
+`NFT-Highway` is a tool that allows you to deploy NFT smart contracts through a Graphic User Interface (GUI). With Highwind you can easily create and mint items that can be sold on [OpenSea](https://opensea.io/).
 
 Leveraging Streamlit, Docker and web3 this tool is run on your local machine and works straight out of the box without any advanced configruation.
 
@@ -28,10 +28,10 @@ In order to streamline deployments, Highwind leverages these 3rd party APIs. You
 
 ## QuickStart
 
-Here is how you can easily get started using Highwind
+Here is how you can easily get started using Highway
 
 ```bash
-git clone https://github.com/banjtheman/highwind.git
+git clone https://github.com/Venus713/nft-highway.git
 cd highwind
 ./build_docker.sh
 ./run_docker.sh
@@ -73,7 +73,8 @@ You can also run a standalone scripts to interact with NFTs
 This script allows you to mint and NFT with a token metadata URL from a contract and send the NFT to an address.
 
 You need to set some environment variables, and pass in arguments to get the script to work. Here is an end-to-end example
-```
+
+```bash
 ./build_docker.sh
 ./run_docker.sh
 docker exec -it DOCKER_HASH
@@ -86,18 +87,19 @@ python mint_nft.py --contract_address CONTRACT_ADDRESS --abi_path ABI_PATH --to_
 ```
 
 Example running the script
-```
+
+```bash
 python mint_nft.py --contract_address "0x6DF98FB9cDfDa02F7d0A53c544520A3a2f9E6eC8" --abi_path "../build/contracts_WitcherCoin/WitcherCoin.json" --to_address "0xd714c8126D36b286d88c4F5Dc7f7f361b92acF11" --token_metadata_url "ipfs://QmSjxUGeqbUSFL5KWwV1x9aGw7QfygmjDiqM2MLhJdr9kP"
 ```
 
 Example output
-```
+
+```bash
 INFO: Starting mint
 INFO: checking if connected to infura...True
 INFO: mint txn hash: 0xdf4cd44c67a81444493115f61a4213071d391ca48f8e8c5dcdb5456ccbc7bf17 
 INFO: Got tokenid: 4
 INFO: Scan url for token 4: https://explorer-mumbai.maticvigil.com/tx/0xdf4cd44c67a81444493115f61a4213071d391ca48f8e8c5dcdb5456ccbc7bf17 
 ```
-
 
 If you want to mint a bunch of NFTs can easily add in looping logic but be weary of gas fees.
